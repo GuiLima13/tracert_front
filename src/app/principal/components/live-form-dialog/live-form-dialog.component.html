@@ -1,0 +1,96 @@
+
+
+  <h1 mat-dialog-title>Bem vindo ao {{filterEstab.estabelecimentoAtual.name}}</h1>
+<div class="dialog" mat-dialog-actions>
+    <div class="div-info">
+        <div class="div-image">
+            <span>{{filterEstab.estabelecimentoAtual.name}}</span>
+        </div>
+        
+        <label class="lbl-titulo" for="">Endereço: {{filterEstab.estabelecimentoAtual.adress.street}}</label>
+        <label class="lbl-titulo" for="">Cidade: {{filterEstab.estabelecimentoAtual.adress.city}}</label>
+        <label class="lbl-titulo" for="">Estado: {{filterEstab.estabelecimentoAtual.adress.state}}</label>
+        <label class="lbl-titulo" for="">Descrição: {{filterEstab.estabelecimentoAtual.description}}</label>
+        <button class="mt-4" mat-button (click)="cancel()">Fechar</button>
+    </div>
+    <div class="div-avaliation ">
+        <div style="align-items: center;" class="d-flex d-flex-justify-content mb-3">
+            <h2>Avaliação:</h2>
+            <button (click)="avaliar()" class="btn  bt-avaliar">Inciar avaliação</button>
+        </div>
+        
+        <label class="lbl-titulo" for="">Deficiência motora:</label>
+        <div class="estrelas">
+            <input class="form-control" (click)="escolherNota('0')" type="radio" id="avalia_star-empty" name="avalia" value="" checked/>
+            <label for="avalia_star-1"><i class="fa"></i></label>
+            <input class="form-control" (click)="escolherNota('1')" type="radio" id="avalia_star-1" name="avalia" value="1"/>
+            <label for="avalia_star-2" ><i class="fa"></i></label>
+            <input class="form-control" (click)="escolherNota('2')" type="radio" id="avalia_star-2" name="avalia" value="2"/>
+            <label for="avalia_star-3"><i class="fa"></i></label>
+            <input class="form-control" (click)="escolherNota('3')" type="radio" id="avalia_star-3" name="avalia" value="3"/>
+            <label for="avalia_star-4"><i class="fa"></i></label>
+            <input class="form-control" (click)="escolherNota('4')" type="radio" id="avalia_star-4" name="avalia" value="4"/>
+            <label for="avalia_star-5"><i class="fa"></i></label>
+            <input class="form-control" (click)="escolherNota('5')" type="radio" id="avalia_star-5" name="avalia" value="5"/>
+        </div>
+        <!-- <label class="lbl-titulo" for="">Deficiência visual:</label>
+        <div class="estrelas">
+            <input type="radio" id="motora_star-empty" name="motora" value="" checked/>
+            <label for="motora_star-1"><i class="fa"></i></label>
+            <input type="radio" id="motora_star-1" name="motora" value="1"/>
+            <label for="motora_star-2"><i class="fa"></i></label>
+            <input type="radio" id="motora_star-2" name="motora" value="2"/>
+            <label for="motora_star-3"><i class="fa"></i></label>
+            <input type="radio" id="motora_star-3" name="motora" value="3"/>
+            <label for="motora_star-4"><i class="fa"></i></label>
+            <input type="radio" id="motora_star-4" name="motora" value="4"/>
+            <label for="motora_star-5"><i class="fa"></i></label>
+            <input type="radio" id="motora_star-5" name="motora" value="5"/>
+        </div>
+        <label class="lbl-titulo" for="">Deficiência mental:</label>
+        <div class="estrelas">
+            <input type="radio" id="mental_star-empty" name="mental" value="" checked/>
+            <label for="mental_star-1"><i class="fa"></i></label>
+            <input type="radio" id="mental_star-1" name="mental" value="1"/>
+            <label for="mental_star-2"><i class="fa"></i></label>
+            <input type="radio" id="mental_star-2" name="mental" value="2"/>
+            <label for="mental_star-3"><i class="fa"></i></label>
+            <input type="radio" id="mental_star-3" name="mental" value="3"/>
+            <label for="mental_star-4"><i class="fa"></i></label>
+            <input type="radio" id="mental_star-4" name="mental" value="4"/>
+            <label for="mental_star-5"><i class="fa"></i></label>
+            <input type="radio" id="mental_star-5" name="mental" value="5"/>
+        </div>
+        <label class="lbl-titulo" for="">Deficiência auditiva:</label>
+        <div class="estrelas">
+            <input type="radio" id="auditiva_star-empty" name="auditiva"checked value="" checked/>
+            <label for="auditiva_star-1"><i class="fa"></i></label>
+            <input type="radio" id="auditiva_star-1" name="auditiva" value="1"/>
+            <label for="auditiva_star-2"><i class="fa"></i></label>
+            <input type="radio" id="auditiva_star-2" name="auditiva" value="2"/>
+            <label for="auditiva_star-3"><i class="fa"></i></label>
+            <input type="radio" id="auditiva_star-3" name="auditiva"  value="3"/>
+            <label for="auditiva_star-4"><i class="fa"></i></label>
+            <input type="radio" id="auditiva_star-4" name="auditiva" value="4"/>
+            <label for="auditiva_star-5"><i class="fa"></i></label>
+            <input type="radio" id="auditiva_star-5" name="auditiva" *ngIf="filterAvaliation" value="5"/>
+        </div>
+        <label class="lbl-titulo" for="">Paralisia cerebral:</label>
+        <div class="estrelas">
+            <input type="radio" id="cerebral_star-empty" name="cerebral" checked value="" />
+            <label for="cerebral_star-1"><i class="fa"></i></label>
+            <input type="radio" id="cerebral_star-1" name="cerebral" value="1"/>
+            <label for="cerebral_star-2"><i class="fa"></i></label>
+            <input type="radio" id="cerebral_star-2" name="cerebral" value="2"/>
+            <label for="cerebral_star-3"><i class="fa"></i></label>
+            <input type="radio" id="cerebral_star-3" name="cerebral" value="3"/>
+            <label for="cerebral_star-4"><i class="fa"></i></label>
+            <input type="radio" id="cerebral_star-4" name="cerebral" value="4"/>
+            <label for="cerebral_star-5"><i class="fa"></i></label>
+            <input type="radio" id="cerebral_star-5" name="cerebral"  value="5"/>
+        </div> -->
+    </div>
+</div>
+
+
+

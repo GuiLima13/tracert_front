@@ -1,0 +1,24 @@
+<div id="container" class="m-2 mt-1">
+    <div class="div-logo">
+        Tracert
+    </div>
+    <div class="div-user-menu ">
+
+    <img *ngIf="filter.user.username != '' " src="../../../assets/icons/person.png" alt="">
+        
+    <label *ngIf="filter.user.name != 'Login'" class="lbl-user">{{filter.user.name}}</label>
+
+    <label *ngIf="filter.user.name == 'Login'"  class="lbl-user">
+        <a routerLink="/login">{{filter.user.name}}</a>
+    </label>
+    <button type="button" class="bt-menu btn p-0" mat-button [matMenuTriggerFor]="menu">
+        <i>
+            <img src="../../../assets/icons/menu.png" alt="">
+        </i>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    </div>
+</div>

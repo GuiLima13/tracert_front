@@ -1,0 +1,35 @@
+.div-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 150px;
+    width: 150px;
+    margin-top: 5px;
+    border: 1px solid white;
+}
+
+.carousel{
+    min-width: 840px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+body{text-align: center; padding-top: 50px}
+
+.estrelas input[type=radio] {
+  display: none;
+}
+.estrelas label i.fa{
+  font-size: 2.5em
+}
+.estrelas label i.fa:before {
+  content:'\f005';
+  color: #FC0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+  color: #CCC;
+}

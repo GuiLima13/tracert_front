@@ -1,0 +1,40 @@
+<carousel class="carousel" style="z-index: 3;">
+    <div *ngFor="let item of list; let i = index" class="carousel-cell div-image">
+        <span >
+            {{item[0].name}}
+        </span>
+        <div  class="estrelas">
+            <input  *ngIf="item[1] == 0 || item[1] == ''" type="radio" id="{{i}}_star_top-empty" name="visualTop{{i}}" checked disabled value="" />
+            <input  *ngIf="item[1] != 0 || item[1] != ''" type="radio" id="{{i}}_star_top-empty" name="visualTop{{i}}" disabled  value="" />
+            
+            <label *ngIf="item[1] == 1" for="{{i}}_star_top-1"><i class="fa"></i></label>
+            <input *ngIf="item[1] == 1" type="radio" id="{{i}}_star_top-1" name="visualTop{{i}}" disabled checked value="1"/>
+            <label *ngIf="item[1] != 1" for="{{i}}_star_top-1"><i class="fa"></i></label>
+            <input *ngIf="item[1] != 1" type="radio" id="{{i}}_star_top-1" name="visualTop{{i}}" disabled  value="1"/>
+
+            <label *ngIf="item[1] == 2"for="{{i}}_star_top-2"><i class="fa"></i></label>
+            <input *ngIf="item[1] == 2"type="radio" id="{{i}}_star_top-2" name="visualTop{{i}}" disabled checked value="2"/>
+            <label *ngIf="item[1] != 2"for="{{i}}_star_top-2"><i class="fa"></i></label>
+            <input *ngIf="item[1] != 2"type="radio" id="{{i}}_star_top-2" name="visualTop{{i}}" disabled value="2"/>
+
+            <label *ngIf="item[1] == 3"for="{{i}}_star_top-3"><i class="fa"></i></label>
+            <input *ngIf="item[1] == 3"type="radio" id="{{i}}_star_top-3" name="visualTop{{i}}" disabled checked value="3"/>
+            <label *ngIf="item[1] != 3"for="{{i}}_star_top-3"><i class="fa"></i></label>
+            <input *ngIf="item[1] != 3"type="radio" id="{{i}}_star_top-3" name="visualTop{{i}}" disabled value="3"/>
+
+
+            <label *ngIf="item[1] == 4"for="{{i}}_star_top-4"><i class="fa"></i></label>
+            <input *ngIf="item[1] == 4"type="radio" id="{{i}}_star_top-4" name="visualTop{{i}}" checked disabled value="4"/>
+            <label *ngIf="item[1] != 4"for="{{i}}_star_top-4"><i class="fa"></i></label>
+            <input *ngIf="item[1] != 4"type="radio" id="{{i}}_star_top-4" name="visualTop{{i}}" disabled value="4"/>
+
+
+            <label *ngIf="item[1] == 5"for="{{i}}_star_top-5"><i class="fa"></i></label>
+            <input *ngIf="item[1] == 5"type="radio" id="{{i}}_star_top-5" name="visualTop{{i}}" disabled checked value="5"/>
+            <label *ngIf="item[1] != 5"for="{{i}}_star_top-5"><i class="fa"></i></label>
+            <input *ngIf="item[1] != 5"type="radio" id="{{i}}_star_top-5" name="visualTop{{i}}" disabled value="5"/>
+
+        </div>
+    </div>
+    
+</carousel>

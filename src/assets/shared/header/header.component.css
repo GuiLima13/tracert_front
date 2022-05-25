@@ -1,0 +1,36 @@
+#container{
+    height: 50px;
+    background-color: #4CAF50;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.div-logo{
+    margin-left: 20px;
+}
+.lbl-user{
+    font-weight: bold;
+    margin-left: 5px;
+}
+.div-user-menu{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.div-user-menu > img{
+    height: 35px;
+    width: 35px;
+}
+.bt-menu{
+    background-color: #4CAF50;
+    border: 1px solid black;
+    margin-left: 10px;
+}
+
+.bt-menu > i > img{
+
+    height: 35px;
+    width: 35px;
+}

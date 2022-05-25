@@ -1,0 +1,76 @@
+
+<div class="div-container-list mt-5 mb-4">
+    <div  style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+        <div class="input-group mb-3 div-search mt-3">
+            <input type="text" name="filter" [(ngModel)]="filter" class="form-control" placeholder="Procure por um estabelecimento" aria-label="Procure por um estabelecimento" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button (click)="getFilter()" class="btn btn-outline-secondary" type="button" id="button-addon2">
+                  <i >
+                      <img src="../../../../assets/icons/search.png" alt="">
+                  </i>
+                </button>
+            </div>
+        </div>
+        <button   class="btn btn-outline-secondary bt-register-estab" type="button" id="button-addon2">
+            <a routerLink="/registro-estabelecimento">
+                
+            Cadastrar novo estabelecimento
+            </a>
+          </button>
+    </div>
+    <table class="table table-striped table-hover ">
+
+        <tr class="">
+            <th>Nome</th>
+            <th>Endereço</th>
+            
+            <th style="text-align: center;"><span>Avaliação</span></th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let item of list; let i = index">
+            <td>
+                {{item[0].name}}
+            </td>
+            <td>
+                {{item[0].adress.street}},{{item[0].adress.number}}
+            </td>
+            <td>  
+                <div class="estrelas">
+                    <input  *ngIf="item[1] == 0 || item[1] == ''" type="radio" id="{{i}}_star-empty" name="visual{{i}}" checked disabled value="" />
+                    <input  *ngIf="item[1] != 0 || item[1] != ''" type="radio" id="{{i}}_star-empty" name="visual{{i}}" disabled  value="" />
+                    
+                    <label *ngIf="item[1] == 1" for="{{i}}_star-1"><i class="fa"></i></label>
+                    <input *ngIf="item[1] == 1" type="radio" id="{{i}}_star-1" name="visual{{i}}" disabled checked value="1"/>
+                    <label *ngIf="item[1] != 1" for="{{i}}_star-1"><i class="fa"></i></label>
+                    <input *ngIf="item[1] != 1" type="radio" id="{{i}}_star-1" name="visual{{i}}" disabled  value="1"/>
+
+                    <label *ngIf="item[1] == 2"for="{{i}}_star-2"><i class="fa"></i></label>
+                    <input *ngIf="item[1] == 2"type="radio" id="{{i}}_star-2" name="visual{{i}}" disabled checked value="2"/>
+                    <label *ngIf="item[1] != 2"for="{{i}}_star-2"><i class="fa"></i></label>
+                    <input *ngIf="item[1] != 2"type="radio" id="{{i}}_star-2" name="visual{{i}}" disabled value="2"/>
+
+                    <label *ngIf="item[1] == 3"for="{{i}}_star-3"><i class="fa"></i></label>
+                    <input *ngIf="item[1] == 3"type="radio" id="{{i}}_star-3" name="visual{{i}}" disabled checked value="3"/>
+                    <label *ngIf="item[1] != 3"for="{{i}}_star-3"><i class="fa"></i></label>
+                    <input *ngIf="item[1] != 3"type="radio" id="{{i}}_star-3" name="visual{{i}}" disabled value="3"/>
+
+
+                    <label *ngIf="item[1] == 4"for="{{i}}_star-4"><i class="fa"></i></label>
+                    <input *ngIf="item[1] == 4"type="radio" id="{{i}}_star-4" name="visual{{i}}" checked disabled value="4"/>
+                    <label *ngIf="item[1] != 4"for="{{i}}_star-4"><i class="fa"></i></label>
+                    <input *ngIf="item[1] != 4"type="radio" id="{{i}}_star-4" name="visual{{i}}" disabled value="4"/>
+
+
+                    <label *ngIf="item[1] == 5"for="{{i}}_star-5"><i class="fa"></i></label>
+                    <input *ngIf="item[1] == 5"type="radio" id="{{i}}_star-5" name="visual{{i}}" disabled checked value="5"/>
+                    <label *ngIf="item[1] != 5"for="{{i}}_star-5"><i class="fa"></i></label>
+                    <input *ngIf="item[1] != 5"type="radio" id="{{i}}_star-5" name="visual{{i}}" disabled value="5"/>
+
+                </div>
+            </td>
+            <td>
+                <button (click)="openEstabelecimento(item[0])" ></button>
+            </td>
+        </tr>
+      </table>
+</div>
